@@ -1,6 +1,6 @@
 # CSCI4800 Assignment 3
 
-![Screenshot](img/smol-wink.svg)
+![Screenshot](public/images/smol-wink.svg)
 
 **Names:** Tammy Husnetdinova and Alex Verkest<br>
 <br>
