@@ -20,5 +20,5 @@
 <br>
 **Nu HTML Checker status:** COMING SOON <br>
 <br>
-**Check it out:** COMING SOON <br>
+No link for this one, because GitHub pages can only host static HTML pages, like the ones in prior assignments. No server side technology is supported, so Node.js applications won't run on GitHub pages. <br>
 <br>
