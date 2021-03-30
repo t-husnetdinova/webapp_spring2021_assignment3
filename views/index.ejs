@@ -1,3 +1,64 @@
-<div class="container">
-    <!-- everything but the navbar from homepage here -->
+<div class="home-container ">
+    <!-- Trending -->
+    <div class="homepageHeader mx-auto">
+        Trending
+    </div>
+
+    <!-- Trending Card Deck-->
+    <div class="card-deck mx-auto homepage">
+        <!-- Trending 1 -->
+        <div class="card bg-light text-white">
+            <img class="card-img-top" src="images/standin.jpg" alt="Card image">
+            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Trending 1</h5>
+                <p class="card-text"> Content </p>
+            </div>
+        </div>
+
+        <!-- Trending 2 -->
+        <div class="card bg-light text-white">
+            <img class="card-img-top" src="images/standin.jpg" alt="Card image">
+            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Trending 2</h5>
+                <p class="card-text"> Content </p>
+            </div>
+        </div>
+
+        <!-- Trending 3 -->
+        <div class="card bg-light text-white">
+            <img class="card-img-top" src="images/standin.jpg" alt="Card image">
+            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Trending 3</h5>
+                <p class="card-text"> Content </p>
+            </div>
+        </div>
+
+        <!-- Trending 4 -->
+        <div class="card bg-light text-white">
+            <img class="card-img-top" src="images/standin.jpg" alt="Card image">
+            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Trending 4</h5>
+                <p class="card-text"> Content </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feed -->
+    <div id="app">
+        <div class="homepageHeader mx-auto">
+            Feed
+        </div>
+        <feed id="feed" ref="feed" :key="componentKey"> </feed>
+
+        <div class="mx-auto text-center">
+            <button class="btn btn-primary" id="moreBtn" title="More" @click="$refs.feed.updatePosts()"> Show More
+            </button>
+        </div>
+    </div>
 </div>
+
+
+
+<!-- Back to top scroll button -->
+
+<button onclick="topFunction()" id="toTopBtn" title="Back to Top">Back to Top</button>

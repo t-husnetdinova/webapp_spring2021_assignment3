@@ -8,15 +8,17 @@
     <!-- Links to external images -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="icon" type="image/svg" href="img/wink-svgrepo-com.svg">
+    <link rel="icon" type="image/svg" href="images/wink-svgrepo-com.svg">
+
+    <!-- Link to external css stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
     <body>
         <header>
-            <!-- Link to external css stylesheet -->
-            <link rel="stylesheet" href="styles.css">
+            
         </header>
 
         <!-- Top navbar -->
@@ -24,8 +26,8 @@
 
             <a class="nav-link" href="#"> </a>
 
-            <a class="navbar-brand" href="index.html">
-                <img src="img/wink-svgrepo-com.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="/">
+                <img src="images/wink-svgrepo-com.svg" width="30" height="30" class="d-inline-block align-top" alt="">
                 Let's Take a Selfie!
             </a>
 
@@ -46,7 +48,7 @@
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <!-- Please keep this version of the button just in case -->
                             <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                            <a href="search.html" class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search
+                            <a href="/search" class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search
                             </a>
                         </form>
                     </li>
@@ -66,13 +68,13 @@
                     <li class="nav-item dropdown">
                         <button type="button" class="btn btn-outline-line dropdown-toggle dropdown-toggle-split"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="img/Blank_face.svg" width="30" height="30" class="d-inline-block align-top"
+                            <img src="images/Blank_face.svg" width="30" height="30" class="d-inline-block align-top"
                                 alt="">
                             <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="account.html">Account</a>
-                            <a class="dropdown-item" href="settings.html">Settings</a>
+                            <a class="dropdown-item" href="/account">Account</a>
+                            <a class="dropdown-item" href="/settings">Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Sign Out</a>
                         </div>
@@ -92,7 +94,7 @@
                     </div>
                     <div class="modal-body text-center">
                         <form class="form-signin">
-                            <img src="img/smile-svgrepo-com.svg" width="100" height="100"
+                            <img src="images/smile-svgrepo-com.svg" width="100" height="100"
                                 class="d-inline-block align-top" alt="">
                             <h2 class="h3 mb-3 font-weight-normal"> Welcome Back! </h2>
 
@@ -105,12 +107,12 @@
                             <!-- Password reset -->
                             <!-- Will need to replace eventually with ref to reset page or more modal logic -->
                             <span class="forgot-password">
-                                <a href="index.html" title="Forgot Password" id="link-reset">Forgot Password?</a>
+                                <a href="/index" title="Forgot Password" id="link-reset">Forgot Password?</a>
                             </span> <br>
                             <!-- No account? Sign up instead bc it's good UX practice -->
                             <!-- Will need to replace eventually with more modal logic -->
                             <span class="no-account">
-                                <a href="index.html" title="Sign Up" id="link-signup">No account? Sign up!</a>
+                                <a href="/index" title="Sign Up" id="link-signup">No account? Sign up!</a>
                             </span>
                         </form>
                     </div>
@@ -129,7 +131,7 @@
                     </div>
                     <div class="modal-body text-center">
                         <form class="form-signup" onsubmit="return validateForm()" novalidate>
-                            <img src="img/happy-emoji-svgrepo-com.svg" width="100" height="100"
+                            <img src="images/happy-emoji-svgrepo-com.svg" width="100" height="100"
                                 class="d-inline-block align-top" alt="">
                             <h2 class="h3 mb-3 font-weight-normal"> Welcome! </h2>
 
@@ -267,8 +269,9 @@
             crossorigin="anonymous"></script>
 
         <!-- Link to external js file -->
-        <script src="js/script.js"></script>
-        <script src="js/feed.js"></script>
+        <script src="main.js"></script>
+        <script src="script.js"></script>
+        <script src="feed.js"></script>
 
         <script>
           const mountedApp = app.mount('#app')

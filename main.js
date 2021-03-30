@@ -34,6 +34,12 @@ app.get("/users", usersController.getAllUsers);
 app.get("/sign-up", usersController.getUserPage); // this might make more sense as get subscribers than users
 app.post("/sign-up", usersController.saveUser);
 
+// more app-specific routes
+app.get("/search", homeController.showResults);
+app.get("/settings", homeController.showSettings);
+app.get("/account", homeController.showAccount);
+
+
 // error handling
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);

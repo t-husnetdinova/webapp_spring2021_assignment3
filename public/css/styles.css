@@ -87,10 +87,9 @@ hr {
 }
 
 .custom-select {
-  position: relative;
+  width: 760px;
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  padding: 15px; /* Some padding */
 }
 
 .invisible {
