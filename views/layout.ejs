@@ -1,23 +1,277 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-           Let's Take a Selfie
-        </title>
-        <link rel="stylesheet" href="/styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-            crossorigin="anonymous">
-    </head>
+
+<head>
+    <title> Let's Take a Selfie! </title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Links to external images -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" type="image/svg" href="img/wink-svgrepo-com.svg">
+</head>
+
+<body>
 
     <body>
-        
-        <!-- put nav here -->
-        
+        <header>
+            <!-- Link to external css stylesheet -->
+            <link rel="stylesheet" href="styles.css">
+        </header>
+
+        <!-- Top navbar -->
+        <nav class="navbar navbar-light navbar-expand-md justify-content-left" style="background-color: #ffffff;">
+
+            <a class="nav-link" href="#"> </a>
+
+            <a class="navbar-brand" href="index.html">
+                <img src="img/wink-svgrepo-com.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Let's Take a Selfie!
+            </a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                <!-- Nav bar items -->
+                <ul class="nav navbar-nav ml-auto">
+                    <!-- Search bar -->
+                    <li class="nav-item">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <!-- Please keep this version of the button just in case -->
+                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                            <a href="search.html" class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search
+                            </a>
+                        </form>
+                    </li>
+
+                    <!-- Log in button -->
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#login">Log In</button>
+                    </li>
+
+                    <!-- Sign up button -->
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup">Sign
+                            Up</button>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-outline-line dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/Blank_face.svg" width="30" height="30" class="d-inline-block align-top"
+                                alt="">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="account.html">Account</a>
+                            <a class="dropdown-item" href="settings.html">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Log In Modal -->
+        <div class="modal" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form class="form-signin">
+                            <img src="img/smile-svgrepo-com.svg" width="100" height="100"
+                                class="d-inline-block align-top" alt="">
+                            <h2 class="h3 mb-3 font-weight-normal"> Welcome Back! </h2>
+
+                            <input type="email" class="form-control" placeholder="Email" required> <br>
+                            <input type="password" class="form-control" placeholder="Password" required> <br>
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Remember Me</label> <br> <br>
+                            <button class="btn btn-primary btn-block" type="submit">Log In</button>
+                            <button class="btn btn-secondary btn-block btn-sm" type="reset">Reset</button> <br>
+                            <!-- Password reset -->
+                            <!-- Will need to replace eventually with ref to reset page or more modal logic -->
+                            <span class="forgot-password">
+                                <a href="index.html" title="Forgot Password" id="link-reset">Forgot Password?</a>
+                            </span> <br>
+                            <!-- No account? Sign up instead bc it's good UX practice -->
+                            <!-- Will need to replace eventually with more modal logic -->
+                            <span class="no-account">
+                                <a href="index.html" title="Sign Up" id="link-signup">No account? Sign up!</a>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+        <div class="modal" id="signup" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form class="form-signup" onsubmit="return validateForm()" novalidate>
+                            <img src="img/happy-emoji-svgrepo-com.svg" width="100" height="100"
+                                class="d-inline-block align-top" alt="">
+                            <h2 class="h3 mb-3 font-weight-normal"> Welcome! </h2>
+
+                            <div id="specialCharacterError" class="invisible errorMessage"> </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="First name" required> <br>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name" required> <br>
+                                </div>
+                                <div class="col" id="date-div">
+                                    <input type="date" id="dob" class="form-control" required> <br>
+                                    <div id="divDobError" class="invisible errorMessage"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Username" required> <br>
+                                </div>
+                                <div class="col">
+                                    <input type="email" class="form-control" placeholder="Email" required> <br>
+                                </div>
+                            </div>
+
+                            <div class="row" id="passwordDiv">
+
+                                <div class="col">
+                                    <input type="password" id="password-sign-up" class="form-control"
+                                        placeholder="Password" required> <br>
+                                </div>
+                                <div class="col">
+                                    <input type="password" id="password-confirm" class="form-control"
+                                        placeholder="Confirm password" required> <br>
+                                </div>
+                                <div id="divPasswordError" class="invisible errorMessage"> </div>
+                            </div>
+
+                            <!-- NEEDS 3 SECURITY QUESTIONS HERE-->
+                            Security Questions <br>
+                            <div class="row">
+                                <div class="col">
+                                    <fieldset class="borderless">
+                                        <div id="security1">
+                                            <select class="custom-select" onchange="updateSecurityQuestion1View()">
+                                                <option value="0">Security Question 1:</option>
+                                                <option value="1">What was your childhood nickname?</option>
+                                                <option value="2">What is your oldest cousin's first and last name?
+                                                </option>
+                                                <option value="3">What was the last name of your third grade teacher?
+                                                </option>
+                                                <option value="4">In what city or town was your first job?</option>
+                                                <option value="5">In what city or town did your mother and father meet?
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div id="divSecurity1" class="invisible">
+                                            <input type="text" class="form-control" placeholder="Answer" required>
+                                            <div class="divSecurityError1" class="invisible errorMessage"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col">
+                                    <fieldset class="borderless">
+                                        <div id="security2">
+                                            <select class="custom-select" onchange="updateSecurityQuestion2View()">
+                                                <option value="0">Security Question 2:</option>
+                                                <option value="1">What was your childhood nickname?</option>
+                                                <option value="2">What is your oldest cousin's first and last name?
+                                                </option>
+                                                <option value="3">What was the last name of your third grade teacher?
+                                                </option>
+                                                <option value="4">In what city or town was your first job?</option>
+                                                <option value="5">In what city or town did your mother and father meet?
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div id="divSecurity2" class="invisible">
+                                            <input type="text" class="form-control" placeholder="Answer" required>
+                                            <div class="divSecurityError2" class="errorMessage invisible "></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col">
+                                    <fieldset class="borderless">
+                                        <div id="security3">
+                                            <select class="custom-select" onchange="updateSecurityQuestion3View()">
+                                                <option value="0">Security Question 3:</option>
+                                                <option value="1">What was your childhood nickname?</option>
+                                                <option value="2">What is your oldest cousin's first and last name?
+                                                </option>
+                                                <option value="3">What was the last name of your third grade teacher?
+                                                </option>
+                                                <option value="4">In what city or town was your first job?</option>
+                                                <option value="5">In what city or town did your mother and father meet?
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div id="divSecurity3" class="invisible">
+                                            <input type="text" class="form-control" placeholder="Answer" required>
+                                            <div class="divSecurityError3" class="errorMessage invisible"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <br>
+                            <button class="btn btn-primary btn-block" type="submit"> Sign Up </button>
+                            <button class="btn btn-secondary btn-block btn-sm" type="reset">Reset</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <%- body %>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <footer class="homepageHeader mx-auto">
+            Let's Take a Selfie! © 2021. All rights reserved
+        </footer>
+        <br>
+
+        <!-- Bootystrap things -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+        <!-- Link to external js file -->
+        <script src="js/script.js"></script>
+        <script src="js/feed.js"></script>
+
+        <script>
+          const mountedApp = app.mount('#app')
+        </script>
     </body>
 </html>

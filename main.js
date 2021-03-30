@@ -9,7 +9,7 @@ usersController = require("./controllers/usersController");
 mongoose.connect("mongodb://localhost:27017/assignment3", 
 {useNewUrlParser: true});
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3001);
 
 app.set("view engine", "ejs");
 app.use(layouts);
@@ -30,7 +30,7 @@ app.use(express.json());
 // routes - will need to add our own
 app.get("/sign-up", homeController.showSignUp);
 app.post("/sign-up", homeController.postedSignUpForm);
-app.get("/users", userssController.getAllUsers);
+app.get("/users", usersController.getAllUsers);
 app.get("/sign-up", usersController.getUserPage); // this might make more sense as get subscribers than users
 app.post("/sign-up", usersController.saveUser);
 
